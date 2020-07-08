@@ -1,24 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import colors from './theme/colors';
-import Products from './pages/products';
+import ProductDetail from './nestedRoute';
+import Cart from './pages/cart';
 
 const Routes = () => {
   const Tab = createBottomTabNavigator();
 
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        activeColor="green"
-        initialRouteName="products"
-        barStyle={{ backgroundColor: colors.backgroundBar }}>
+      <Tab.Navigator activeColor="green" initialRouteName="products">
         <Tab.Screen
           name="products"
-          component={Products}
+          component={ProductDetail}
           options={{
             tabBarLabel: 'Produtos',
             tabBarIcon: ({ color }) => (
@@ -31,8 +27,8 @@ const Routes = () => {
           }}
         />
         <Tab.Screen
-          name="cart"
-          component={SettingsScreen}
+          name="ddefora"
+          component={Cart}
           options={{
             tabBarLabel: 'Carrinho',
             tabBarIcon: ({ color }) => (
@@ -48,13 +44,5 @@ const Routes = () => {
     </NavigationContainer>
   );
 };
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
 
 export default Routes;
