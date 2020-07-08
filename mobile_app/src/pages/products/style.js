@@ -10,4 +10,9 @@ export default StyleSheet.create({
   list: {
     padding: 10,
   },
+
+  helpText: {
+    alignSelf: 'center',
+    marginBottom: 10,
+  },
 });
