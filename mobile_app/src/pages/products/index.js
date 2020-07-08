@@ -4,6 +4,7 @@ import { View, FlatList, Text, ToastAndroid, ScrollView } from 'react-native';
 import ComicsService from '../../services/comicsService';
 import Style from './style';
 import CardComic from '../../components/CardComic';
+import HeaderList from './../../components/HeaderList';
 
 const Products = () => {
   const INITIAL_OFFSET = 10;
@@ -17,7 +18,6 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-    console.log(offsetList);
     if (offsetList > INITIAL_OFFSET) {
       loadComics();
     }
@@ -50,9 +50,7 @@ const Products = () => {
         style={Style.list}
         data={comics}
         ListHeaderComponent={
-          <Text style={Style.helpText}>
-            Arrante para baixo para carregar mais...
-          </Text>
+          <HeaderList loading={loading} textStyle={Style.helpText} />
         }
         onRefresh={refresh}
         refreshing={loading}
