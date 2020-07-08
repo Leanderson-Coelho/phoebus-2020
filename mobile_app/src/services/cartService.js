@@ -10,7 +10,9 @@ export default {
   async addItem(item) {
     let current = await this.loadAll();
     if (current && current.length > 0) {
-      current.push(item);
+      if (!this.findItem(item.id, current)) {
+        current.push(item);
+      }
     } else {
       current = [item];
     }
@@ -37,5 +39,15 @@ export default {
 
   async removeAll() {
     await this.saveList([]);
+  },
+
+  findItem(itemId, cart) {
+    let found = false;
+    cart.forEach((i) => {
+      if (i.id === itemId) {
+        found = true;
+      }
+    });
+    return found;
   },
 };
