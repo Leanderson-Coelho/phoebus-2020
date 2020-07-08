@@ -1,20 +1,25 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import Style from './style';
 
 const CardComic = (props) => {
   const { index } = props;
   const { comic } = props;
+  const navigation = useNavigation();
 
   const maxLength = 15;
+
+  function goToDetailComic() {
+    navigation.navigate('detail', { id: comic.id });
+  }
 
   return (
     <View style={Style.container}>
       {index % 2 === 1 && (
         <View style={Style.rightItem}>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToDetailComic}>
               <Text style={Style.title}>
                 {comic.title.length < maxLength
                   ? `${comic.title}`
@@ -27,7 +32,7 @@ const CardComic = (props) => {
             <Text style={Style.descritpionRight}>Por ${comic.price}</Text>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToDetailComic}>
               <Image
                 style={Style.image}
                 source={{
@@ -41,7 +46,7 @@ const CardComic = (props) => {
       {index % 2 === 0 && (
         <View style={Style.leftItem}>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToDetailComic}>
               <Image
                 style={Style.image}
                 source={{
@@ -51,7 +56,7 @@ const CardComic = (props) => {
             </TouchableOpacity>
           </View>
           <View style={Style.boxDetails}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={goToDetailComic}>
               <Text style={Style.title}>
                 {comic.title.length < maxLength
                   ? `${comic.title}`
