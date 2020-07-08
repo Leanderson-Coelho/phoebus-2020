@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Button } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import ComicsService from '../../services/comicsService';
 import Style from './style';
