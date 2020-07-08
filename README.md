@@ -8,9 +8,11 @@
 
 # Requisitos
 
-Devido ao **pouco tempo** dado para construção do projeto algumas funcionalidades foram priorizadas e neste caso, **todos os requisitos não foram cumpridos**.
+## Notas sobre os prazos
 
-**Não foi encontrada nenhuma dificuldade nos requisitos solicitados** mas com o tempo dado se torna inviável ( mentalmente ) a construção do app.
+Como houve um engano na informação passada sobre a data de entrega, toda a aplicação foi pensada para ser implementada em um curto período de tempo, que na verdade era maior. E nesse caso, houve menos tempo para planejamentos.
+
+* **Não foi encontrada nenhuma dificuldade nos requisitos solicitados** mas com o tempo dado se torna inviável ( mentalmente ) a construção do app. _(Primeiro Prazo)_
 
 ### Dependências Utilizadas
 
