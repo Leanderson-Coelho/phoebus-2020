@@ -50,7 +50,11 @@ const Products = () => {
         style={Style.list}
         data={comics}
         ListHeaderComponent={
-          <HeaderList loading={loading} textStyle={Style.helpText} />
+          <HeaderList
+            loading={loading}
+            text="Arrante para baixo para carregar mais..."
+            textStyle={Style.helpText}
+          />
         }
         onRefresh={refresh}
         refreshing={loading}
