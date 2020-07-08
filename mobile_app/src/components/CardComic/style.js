@@ -20,16 +20,29 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
 
-  a: {
-    backgroundColor: 'red',
-  },
+  // a: {
+  //   backgroundColor: 'red',
+  // },
 
-  b: {
-    backgroundColor: 'blue',
-  },
+  // b: {
+  //   backgroundColor: 'blue',
+  // },
 
   image: {
     width: 150,
     height: 230,
+  },
+
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+
+  descritpionRight: {
+    alignSelf: 'flex-end',
+  },
+
+  boxDetails: {
+    padding: 10,
   },
 });
