@@ -9,4 +9,9 @@ export default StyleSheet.create({
   button: {
     marginTop: 10,
   },
+
+  helpText: {
+    alignSelf: 'center',
+    marginBottom: 10,
+  },
 });
