@@ -4,13 +4,9 @@ import { Text } from 'react-native';
 const HeaderList = (props) => {
   const { loading } = props;
   const { textStyle } = props;
-  return (
-    <>
-      {!loading && (
-        <Text style={textStyle}>Arrante para baixo para carregar mais...</Text>
-      )}
-    </>
-  );
+  const { text } = props;
+
+  return <>{!loading && <Text style={textStyle}>{text}</Text>}</>;
 };
 
 export default HeaderList;
