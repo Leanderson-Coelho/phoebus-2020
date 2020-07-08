@@ -24,6 +24,11 @@ Com todas as [configurações](https://reactnative.dev/docs/environment-setup) f
 
 > npm install
 
+
+Inicie o servidor do React Native
+
+> npm run start
+
 Após isso, execute o seguinte comando para construir e abrir o app.
 
 > npm run android
