@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import ComicsService from '../../services/comicsService';
 import Style from './style';
@@ -22,7 +22,6 @@ const Products = () => {
 
   return (
     <View style={Style.container}>
-      <Text>Página de produtos</Text>
       <FlatList
         style={Style.list}
         data={comics}
