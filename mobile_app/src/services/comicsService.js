@@ -6,9 +6,9 @@ import { Image } from 'react-native';
 import DefaultImage from '../assets/marvel_comics.png';
 
 export default {
-  async loadComics() {
+  async loadComics(offset) {
     const response = await Axios.get(
-      `${API}/comics${buildUrlSecurity()}&limit=20&offset=20`,
+      `${API}/comics${buildUrlSecurity()}&limit=20&offset=${offset || 20}`,
     );
     const rawComics = getDataResponse(response);
 
