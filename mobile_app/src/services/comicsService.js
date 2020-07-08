@@ -1,11 +1,13 @@
 import Axios from 'axios';
 import { API, buildUrlSecurity, getDataResponse } from './apiConfig';
 import { Comic } from './../model/Comic';
+import { Image } from 'react-native';
+import DefaultImage from '../assets/marvel_comics.png';
 
 export default {
   async loadComics() {
     const response = await Axios.get(
-      `${API}/comics${buildUrlSecurity()}&limit=100&offset=20`,
+      `${API}/comics${buildUrlSecurity()}&limit=20&offset=20`,
     );
     const rawComics = getDataResponse(response);
 
@@ -45,6 +47,11 @@ export default {
   },
 
   manipuleThambnail(thumb) {
-    return `${thumb.path}/portrait_incredible.${thumb.extension}`;
+    if (thumb.path.search('image_not_available') === -1) {
+      return `${thumb.path}/portrait_incredible.${thumb.extension}`;
+    } else {
+      const uri = Image.resolveAssetSource(DefaultImage).uri;
+      return uri;
+    }
   },
 };
